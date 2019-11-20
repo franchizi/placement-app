@@ -7,4 +7,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :comments
   has_one :cart
+
+  enum role: [:standard, :license_holder, :admin]
+
+  after_initialize do
+    if self.new_record?
+      self.role ||= :standard
+    end
+  end
 end

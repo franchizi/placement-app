@@ -30,6 +30,7 @@ class AdminsController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    @roles = User.roles
   end
 
   # This gets the info from the edit form and updates the data.
@@ -38,7 +39,7 @@ class AdminsController < ApplicationController
     @user.update_attributes(user_params)
     redirect_to admins_path
   end
-  
+
 def users_index
     @users = User.all
 end
@@ -55,6 +56,6 @@ end
   def user_params
     params.require(:user).permit(:email, :password,
                                  :password_confirmation, :first_name,
-                                 :last_name, :phone, :admin, :license_holder)
+                                 :last_name, :phone, :role)
   end
 end

@@ -16,6 +16,7 @@ gem 'roo-xls', '~> 1.1'
 gem 'pg_search', '~> 2.1', '>= 2.1.7'
 gem "devise", ">= 4.7.1"
 gem "bootstrap_form", "~> 4.0"
+gem "pundit", ">= 2.1.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
