@@ -45,7 +45,6 @@
   <div class="field mt-2">
     <%= f.label :role %>
     <%= f.select:role, options_for_select(@roles.map { |key, value| [key.humanize, key] }, f.object.role), {selected: true} %>
-    <%= f.object.inspect %>
   </div>
 
   <div class="actions">

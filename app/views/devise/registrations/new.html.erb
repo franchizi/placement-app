@@ -22,7 +22,7 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control shadow' %>
   </div>
-  
+
     <div class="field">
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name, class: 'form-control shadow' %>
@@ -36,10 +36,9 @@
     <%= f.text_field :phone, class: 'form-control shadow' %>
   </div>
   </div>
-    <div class="field">
-    <%= f.label :admin, 'Administrator' %>
-    <%= f.check_box :admin, class: 'ml-2 shadow' %>
-    <%#= f.select :admin, [['Yes', true], ['No', false]], {}, {class: "form-control mb-2"} %> <!-- This was code that I used to create a select for making a user admin. I decided it was better to go with a checkbox instead. -->
+  <div class="field mt-2">
+    <%= f.label :role %>
+    <%= f.select:role, options_for_select(User.roles.map { |key, value| [key.humanize, key] }, f.object.role), {selected: true} %>
   </div>
 
   <div class="actions">
